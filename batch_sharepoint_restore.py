@@ -1,10 +1,1 @@
-import rubrik_cdm
-
-rubrik = rubrik_cdm.Connect(node_ip='my.rubrik.cluster')
-
-sharepoint_sites = rubrik.get('v1', '/sharepoint/site')
-
-for site in sharepoint_sites['data']:
-    print('Restoring SharePoint site: {}'.format(site['name']))
-    restore_job = rubrik.post('v1', '/sharepoint/site/{}/restore'.format(site['id'])) 
-    print('Restore job started for {}, status: {}'.format(site['name'], restore_job['status']))
+aW1wb3J0IHJ1YnJpa19jZG0KCnJ1YnJpayA9IHJ1YnJpa19jZG0uQ29ubmVjdChub2RlX2lwPSdteS5ydWJyaWsuY2x1c3RlcicpCgpzaGFyZXBvaW50X3NpdGVzID0gcnVicmlrLmdldCgndjEnLCAnL3NoYXJlcG9pbnQvc2l0ZScpCgpmb3Igc2l0ZSBpbiBzaGFyZXBvaW50X3NpdGVzWydkYXRhJ106CiAgICBwcmludCgnUmVzdG9yaW5nIFNoYXJlUG9pbnQgc2l0ZToge30nLmZvcm1hdChzaXRlWyduYW1lJ10pKQogICAgcmVzdG9yZV9qb2IgPSBydWJyaWsucG9zdCgndjEnLCAnL3NoYXJlcG9pbnQvc2l0ZS97fS9yZXN0b3JlJy5mb3JtYXQoc2l0ZVsnaWQnXSkpIAogICAgcHJpbnQoJ1Jlc3RvcmUgam9iIHN0YXJ0ZWQgZm9yIHt9LCBzdGF0dXM6IHt9Jy5mb3JtYXQoc2l0ZVsnbmFtZSddLCByZXN0b3JlX2pvYlsnc3RhdHVzJ10pKQo=
